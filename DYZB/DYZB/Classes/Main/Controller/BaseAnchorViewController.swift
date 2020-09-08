@@ -20,7 +20,7 @@ private let KNormalCellID = "KNormalCellID"
 let KPrettyCellID = "KPrettyCellID"
 private let KHeaderViewID = "KHeaderViewID"
 
-class BaseAnchorViewController: UIViewController {
+class BaseAnchorViewController: BaseViewController {
     
     //MARK: - 定义属性
     var baseVM:BaseViewModel!
@@ -58,8 +58,13 @@ class BaseAnchorViewController: UIViewController {
 //MARK: - 设置UI界面
 extension BaseAnchorViewController
 {
-    @objc func setupUI() {
+    override func setupUI() {
+        
+        contentView = collectionView
+        
         view.addSubview(collectionView)
+        
+        super.setupUI()
     }
 }
 
@@ -71,7 +76,7 @@ extension BaseAnchorViewController
 }
 
 //MARK: - 遵循UICollectionView的数据源和协议
-extension BaseAnchorViewController:UICollectionViewDataSource,UICollectionViewDelegate
+extension BaseAnchorViewController:UICollectionViewDataSource
 {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return baseVM.anchorGroups.count
@@ -85,6 +90,7 @@ extension BaseAnchorViewController:UICollectionViewDataSource,UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath)
          as! CollectionNormalCell
         
+        
         cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
         
         return cell
@@ -94,5 +100,29 @@ extension BaseAnchorViewController:UICollectionViewDataSource,UICollectionViewDe
         let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: KHeaderViewID, for: indexPath) as! CollectionHeaderView
         cell.group = baseVM.anchorGroups[indexPath.section]
         return cell
+    }
+}
+
+//MARK: - 实现UICollectionView的代理协议
+extension BaseAnchorViewController:UICollectionViewDelegate
+{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+        
+        anchor.isVertical == 0 ?pushNormalRoomVc(anchor: anchor):presentShowRoomVc(anchor: anchor)
+    }
+    
+    private func presentShowRoomVc(anchor:AnchorModel?){
+        let showRoomVc = RoomShowViewController()
+        showRoomVc.modalPresentationStyle = .fullScreen
+        showRoomVc.anchor = anchor
+        present(showRoomVc,animated:true,completion:nil)
+    }
+    
+    private func pushNormalRoomVc(anchor:AnchorModel?){
+        let normalRoomVc = RoomNormalViewController()
+        normalRoomVc.anchor = anchor
+        navigationController?.pushViewController(normalRoomVc, animated: true)
     }
 }
