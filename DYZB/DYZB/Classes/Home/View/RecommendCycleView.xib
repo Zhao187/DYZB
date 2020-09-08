@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCycleView" customModule="DYZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-C0-yLX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dQQ-Gq-71A">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="kYT-kn-OhI"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="ZsB-Fj-wnq"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IJa-fv-dZ7">
+                    <rect key="frame" x="326" y="141" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7gB-C0-yLX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="A1u-o2-cgz"/>
+                <constraint firstItem="7gB-C0-yLX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IXv-Oy-I0X"/>
+                <constraint firstAttribute="bottom" secondItem="IJa-fv-dZ7" secondAttribute="bottom" constant="-3" id="S0m-jz-27l"/>
+                <constraint firstAttribute="bottom" secondItem="7gB-C0-yLX" secondAttribute="bottom" id="WrP-1p-G7c"/>
+                <constraint firstAttribute="trailing" secondItem="7gB-C0-yLX" secondAttribute="trailing" id="edm-Nh-snm"/>
+                <constraint firstAttribute="trailing" secondItem="IJa-fv-dZ7" secondAttribute="trailing" constant="10" id="fYs-hC-cyZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="7gB-C0-yLX" id="II1-NQ-meP"/>
+                <outlet property="pageControl" destination="IJa-fv-dZ7" id="Cdf-wm-0Dz"/>
+            </connections>
+            <point key="canvasLocation" x="-99.275362318840592" y="-121.54017857142857"/>
+        </view>
+    </objects>
+</document>
