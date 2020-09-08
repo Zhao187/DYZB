@@ -26,6 +26,8 @@
 		7025B95825050F340032563C /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025B95725050F340032563C /* Date-Extension.swift */; };
 		7025B95A250517980032563C /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025B959250517980032563C /* AnchorGroup.swift */; };
 		7025B95C25051C2C0032563C /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7025B95B25051C2C0032563C /* AnchorModel.swift */; };
+		7046A141250751C8009D8A42 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7046A140250751C8009D8A42 /* BaseViewModel.swift */; };
+		7046A14325075325009D8A42 /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7046A14225075325009D8A42 /* BaseAnchorViewController.swift */; };
 		709B000F2504DFE600092E39 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B000E2504DFE600092E39 /* RecommendViewModel.swift */; };
 		70AA8B18250384430085EFA7 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA8B17250384430085EFA7 /* RecommendViewController.swift */; };
 		70AA8B1B25038C040085EFA7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA8B1925038C040085EFA7 /* CollectionHeaderView.swift */; };
@@ -75,6 +77,8 @@
 		7025B95725050F340032563C /* Date-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 		7025B959250517980032563C /* AnchorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		7025B95B25051C2C0032563C /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		7046A140250751C8009D8A42 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		7046A14225075325009D8A42 /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		709B000E2504DFE600092E39 /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		70AA8B17250384430085EFA7 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		70AA8B1925038C040085EFA7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 		7001BA1C2501E7750061A70E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7046A13F250732B1009D8A42 /* ViewModel */,
 				7001BA4325020F800061A70E /* Controller */,
 				7001BA4425020F8A0061A70E /* Model */,
 				7001BA4525020F910061A70E /* View */,
@@ -242,6 +247,7 @@
 			children = (
 				701F66382500E78C003ADAA1 /* Main.storyboard */,
 				7001BA3E25020B0C0061A70E /* MainViewController.swift */,
+				7046A14225075325009D8A42 /* BaseAnchorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -374,6 +380,14 @@
 				701F66402500E78F003ADAA1 /* Info.plist */,
 			);
 			path = DYZB;
+			sourceTree = "<group>";
+		};
+		7046A13F250732B1009D8A42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7046A140250751C8009D8A42 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		709B000D2504DFA000092E39 /* ViewModel */ = {
@@ -526,11 +540,13 @@
 				70AA8B1B25038C040085EFA7 /* CollectionHeaderView.swift in Sources */,
 				70E798222506224D00E63AA9 /* GameViewModel.swift in Sources */,
 				7001BA3F25020B0C0061A70E /* MainViewController.swift in Sources */,
+				7046A14325075325009D8A42 /* BaseAnchorViewController.swift in Sources */,
 				70E7982025061F9200E63AA9 /* GameViewController.swift in Sources */,
 				7001BA5525021B0A0061A70E /* PageTitleView.swift in Sources */,
 				7025B95A250517980032563C /* AnchorGroup.swift in Sources */,
 				7001BA5B250227C50061A70E /* UIColor_Extension.swift in Sources */,
 				70AA8B18250384430085EFA7 /* RecommendViewController.swift in Sources */,
+				7046A141250751C8009D8A42 /* BaseViewModel.swift in Sources */,
 				70E79815250600B700E63AA9 /* CollectionCycleCell.swift in Sources */,
 				70E79824250622B300E63AA9 /* GameModel.swift in Sources */,
 				70E79826250622ED00E63AA9 /* BaseGameModel.swift in Sources */,

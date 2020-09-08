@@ -7,11 +7,10 @@
 //
 
 import UIKit
-class RecommendViewModel
+class RecommendViewModel:BaseViewModel
 {
     //    MARK: - 懒加载属性
     lazy var cycleModels : [CycleModel] = [CycleModel]()
-    lazy var anchorGroups:[AnchorGroup] = [AnchorGroup]()
     fileprivate lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     fileprivate lazy var prettyGroup : AnchorGroup = AnchorGroup()
 }
@@ -58,17 +57,9 @@ extension RecommendViewModel
         }
         // 5.请求2-12部分游戏数据
         dGroup.enter()
-        NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate",
-                                 parameters: parameters) { (result) in
-                                    guard let restDict = result as? [String:NSObject] else {return}
-                                    
-                                    guard let dataArray = restDict["data"] as? [[String:NSObject]] else {return}
-                                    
-                                    for dict in dataArray{
-                                        let group = AnchorGroup(dict: dict)
-                                        self.anchorGroups.append(group)
-                                    }
-                                    dGroup.leave()
+        
+        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
+            dGroup.leave()
         }
         
         // 6.所有的数据都请求到,之后进行排序
